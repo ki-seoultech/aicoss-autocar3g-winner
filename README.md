@@ -37,4 +37,76 @@ To address this, we designed a system that **explicitly separates perception, co
 ---
 
 ## ⚙️ System Architecture
+Camera Input
+↓
+CNN-based Line Tracing (Steering Control)
+↓
+Intersection Detection
+↓
+Two-Armed Bandit Decision Module (Left / Right)
+↓
+YOLO Object Detection (Reward Signal)
+↓
+Reward Update & Policy Adjustment
+
+
+- **Jetson Nano** performs real-time control and inference
+- **YOLO-based detection** provides sparse but high-impact reward signals
+- Cooldown logic prevents duplicate reward counting within a single lap
+
+---
+
+## ✨ Key Features
+
+- 🚗 **CNN-based Line Tracing**
+  - Lightweight model optimized for Jetson Nano
+  - Stable multi-lap autonomous driving without collisions
+
+- 🎯 **Two-Armed Bandit Decision Making**
+  - UCB-based and ensemble policies
+  - Adaptive path selection based on accumulated rewards
+
+- 👁️ **YOLO-based Object Detection**
+  - Detects reward objects (green signals)
+  - Serves as reinforcement feedback rather than dense supervision
+
+- 🔗 **Real-World System Integration**
+  - Deployed on AutoCar3G platform
+  - Designed under real-time and hardware constraints
+
+---
+
+## 🛠 Tech Stack
+
+- **Language**: Python
+- **Embedded Platform**: NVIDIA Jetson Nano
+- **Deep Learning**: CNN, YOLOv8
+- **Decision Algorithms**: Two-Armed Bandit (UCB, Ensemble Policy)
+- **Frameworks**: PyTorch / Keras, OpenCV
+
+---
+
+## 📊 Results
+
+- Stable autonomous driving across continuous laps
+- Effective reward maximization through adaptive decision-making
+- Robust performance in a real competition environment
+- 🏆 **Winner of AI COSS Autonomous Driving Robot Competition**
+
+---
+
+## 📄 Documentation
+
+Detailed project documentation, experimental analysis, and the official competition report are available on Notion:
+
+👉 https://www.notion.so/AI-COSS-2dd16f83064c813ebde2cc93412979f2
+
+---
+
+## 👤 Author
+
+- **Affiliation**: Seoul National University of Science and Technology (SeoulTech)
+- **Role**: Autonomous Driving, Decision Algorithms, System Integration
+
+
 
