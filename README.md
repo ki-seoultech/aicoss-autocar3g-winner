@@ -1,28 +1,40 @@
-# aicoss-autocar3g-winner
-Winner solution for the AI COSS Autonomous Driving Robot Competition using CNN-based line tracing and decision-making algorithms.
-# AI COSS Autonomous Driving Robot (Winner)
+# AI COSS AutoCar3G Autonomous Driving Robot — Winner 🏆
 
-## Overview
-This project is an autonomous driving robot system developed for the AI COSS Autonomous Driving Competition.
-The goal was to maximize reward by combining camera-based line tracing with a decision-making algorithm
-under real-world constraints (Jetson Nano, real-time inference).
+**Winner solution** for the **AI COSS Autonomous Driving Robot Competition**,  
+focusing on real-time autonomous driving and reward-maximizing decision-making  
+under embedded system constraints.
 
-## Key Features
-- CNN-based line tracing (Jetson Nano optimized)
-- Two-Armed Bandit based decision making at intersections
-- YOLO-based object detection for reward acquisition
-- Real-world deployment on AutoCar3G platform
+---
 
-## Tech Stack
-- Python, PyTorch / Keras
-- Jetson Nano
-- YOLOv8
-- Two-Armed Bandit (UCB, Ensemble Policy)
+## 🏁 Overview
 
-## Results
-- 🏆 Winner of AI COSS Autonomous Driving Competition (External)
-- Stable multi-lap driving with reward-maximizing decisions
+This project implements an **end-to-end autonomous driving robot system** developed for the  
+**AI COSS Autonomous Driving Competition**, where the objective was to **maximize total reward
+within a limited time** while maintaining stable autonomous driving.
 
-## More Details
-📄 Full project documentation and reports are available on Notion:  
-👉 [Notion Project Page Link]
+The system combines:
+- **Camera-based line tracing** for continuous driving
+- **Decision-making algorithms** to select optimal paths at intersections
+- **Object detection** to identify reward signals
+
+All components were deployed and validated on a **Jetson Nano–based AutoCar3G platform**,  
+reflecting real-world constraints such as limited compute resources and real-time inference.
+
+🏆 **Final Result: Winner (1st Place, External Competition)**
+
+---
+
+## 🧠 Core Problem
+
+Beyond basic line following, the key challenge was **decision-making under uncertainty**:
+
+- Which path (left/right) yields higher expected reward?
+- How to balance exploration and exploitation in a short time window?
+- How to integrate perception, control, and decision logic on embedded hardware?
+
+To address this, we designed a system that **explicitly separates perception, control, and decision layers**, enabling flexible and robust behavior during competition runs.
+
+---
+
+## ⚙️ System Architecture
+
